@@ -6,7 +6,7 @@ Interactive CSS layout playground built with React and Tailwind CSS as part of t
 
 ## Live Demo
 
-https://layoutlab-2026.netlify.app/
+[LayoutLab](https://layoutlab-2026.netlify.app/)
 
 ---
 
