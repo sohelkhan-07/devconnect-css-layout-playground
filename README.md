@@ -150,6 +150,8 @@ The playground provides the interactive Flexbox and CSS Grid controls, live prev
 ```text
 devconnect-css-layout-playground/
 ├── public/
+│   ├── favicon.png
+│   └── _redirects
 ├── screenshots/
 │   ├── desktop-homepage.png
 │   ├── flexbox-playground.png
@@ -174,70 +176,60 @@ devconnect-css-layout-playground/
 ├── package.json
 ├── package-lock.json
 └── README.md
-
+```
 
 ---
 
-Getting Started
+## Getting Started
 
-Prerequisites
+### Prerequisites
 
 Make sure you have Node.js and npm installed.
 
-Installation
+### Installation
 
 Clone the repository:
 
+```bash
 git clone https://github.com/sohelkhan-07/devconnect-css-layout-playground.git
+```
 
 Navigate to the project directory:
 
+```bash
 cd devconnect-css-layout-playground
+```
 
 Install the dependencies:
 
+```bash
 npm install
+```
 
 Start the development server:
 
+```bash
 npm run dev
+```
 
 The application will be available at the local development URL provided by Vite.
 
-
 ---
 
-Usage
+## Usage
 
 1. Open the LayoutLab playground.
-
-
 2. Choose between Flexbox and Grid.
-
-
 3. Adjust the available layout controls.
-
-
 4. Observe the changes in the live preview.
-
-
 5. Enable responsive behavior when needed.
-
-
 6. Review the generated CSS.
-
-
 7. Copy the generated CSS when needed.
-
-
 8. Use Reset to return to the default configuration.
-
-
-
 
 ---
 
-Deployment
+## Deployment
 
 LayoutLab is a frontend-only React application deployed using Netlify.
 
@@ -245,183 +237,135 @@ Live application:
 
 https://layoutlab-2026.netlify.app/
 
-
 ---
 
-Testing
+## Testing
 
 The application was tested during development across different viewport sizes and playground configurations.
 
 Testing focused on:
 
-Flexbox controls
-
-CSS Grid controls
-
-Live preview updates
-
-Generated CSS updates
-
-Responsive CSS generation
-
-Copy CSS functionality
-
-Reset functionality
-
-Responsive navigation
-
-Mobile layouts
-
-Narrow viewport behavior
-
-Generated CSS panel behavior
-
-
+- Flexbox controls
+- CSS Grid controls
+- Live preview updates
+- Generated CSS updates
+- Responsive CSS generation
+- Copy CSS functionality
+- Reset functionality
+- Responsive navigation
+- Mobile layouts
+- Narrow viewport behavior
+- Generated CSS panel behavior
 
 ---
 
-Key Implementation Decisions
+## Key Implementation Decisions
 
-Shared state for the playground
+### Shared State for the Playground
 
 React state is used to store the current playground configuration.
 
 The same state controls both the live preview and the generated CSS so that the preview and CSS output remain synchronized.
 
-Conditional layout controls
+### Conditional Layout Controls
 
 Flexbox and CSS Grid use different layout properties.
 
 The playground therefore displays the relevant controls based on the selected layout mode.
 
-Dynamic CSS generation
+### Dynamic CSS Generation
 
 The generated CSS is created from the current playground configuration rather than being static.
 
 This allows the CSS output to update whenever the user changes a layout property.
 
-Responsive CSS generation
+### Responsive CSS Generation
 
 When responsive behavior is enabled, LayoutLab generates media queries based on the current layout configuration.
 
-CSS generation with useMemo
+### CSS Generation with `useMemo`
 
-The generated CSS is derived using React's useMemo so the CSS output is recalculated when the relevant playground settings change.
+The generated CSS is derived using React's `useMemo` so the CSS output is recalculated when the relevant playground settings change.
 
-Clipboard functionality
+### Clipboard Functionality
 
 The generated CSS can be copied directly using the browser Clipboard API.
 
-
 ---
 
-DevConnect Requirements Covered
+## DevConnect Requirements Covered
 
-This project was created as the final project for the DevConnect Verified Frontend Internship, run by Vyren.
+This project was created as the final project for the **DevConnect Verified Frontend Internship, run by Vyren**.
 
 The project focuses on:
 
-Interactive frontend development
-
-Responsive design
-
-CSS layout concepts
-
-React state management
-
-Accessible user interactions
-
-Dynamic CSS generation
-
-Clear project documentation
-
-Practical frontend implementation
-
-
+- Interactive frontend development
+- Responsive design
+- CSS layout concepts
+- React state management
+- Accessible user interactions
+- Dynamic CSS generation
+- Clear project documentation
+- Practical frontend implementation
 
 ---
 
-Project Decisions
+## Project Decisions
 
 The project was intentionally kept frontend-only so the main focus could remain on CSS layout experimentation and interactive frontend development.
 
 The playground was designed around two core layout systems:
 
-Flexbox
-
-CSS Grid
-
+- Flexbox
+- CSS Grid
 
 The interface provides the controls needed to experiment with these systems while keeping the generated CSS visible alongside the live preview.
 
-
 ---
 
-What I Practiced
+## What I Practiced
 
 Through this project, I practiced:
 
-React state management
-
-Conditional rendering
-
-useMemo
-
-Flexbox
-
-CSS Grid
-
-Responsive CSS
-
-Dynamic CSS generation
-
-Clipboard API
-
-Responsive UI design
-
-Accessible form controls
-
-Component-based React architecture
-
-Git and GitHub workflow
-
-Frontend deployment
-
-
+- React state management
+- Conditional rendering
+- `useMemo`
+- Flexbox
+- CSS Grid
+- Responsive CSS
+- Dynamic CSS generation
+- Clipboard API
+- Responsive UI design
+- Accessible form controls
+- Component-based React architecture
+- Git and GitHub workflow
+- Frontend deployment
 
 ---
 
-Future Improvements
+## Future Improvements
 
 Possible future improvements include:
 
-Additional Flexbox properties
-
-Additional CSS Grid properties
-
-Individual item controls
-
-Layout presets
-
-More responsive configuration options
-
-Additional CSS layout techniques
-
-
+- Additional Flexbox properties
+- Additional CSS Grid properties
+- Individual item controls
+- Layout presets
+- More responsive configuration options
+- Additional CSS layout techniques
 
 ---
 
-Status
+## Status
 
 **Completed, reviewed, and deployed as part of the DevConnect Verified Frontend Internship, run by Vyren.**
 
 ---
 
-Author
+## Author
 
-Sohel Khan
+**Sohel Khan**
 
 GitHub: https://github.com/sohelkhan-07
 
 LinkedIn: https://www.linkedin.com/in/sohelkhan07/
-
