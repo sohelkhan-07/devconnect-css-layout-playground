@@ -310,16 +310,91 @@ The project focuses on:
 
 ---
 
-## Project Decisions
+## Project Decision Record
 
-The project was intentionally kept frontend-only so the main focus could remain on CSS layout experimentation and interactive frontend development.
+The following decisions were the most expensive to reverse during the project.
 
-The playground was designed around two core layout systems:
+### Decision 1: React for the application architecture
 
-- Flexbox
-- CSS Grid
+**What was decided**
 
-The interface provides the controls needed to experiment with these systems while keeping the generated CSS visible alongside the live preview.
+I chose React as the frontend framework and structured the application using reusable components and React state.
+
+**Alternatives considered**
+
+- Plain HTML, CSS, and JavaScript
+- React
+- Next.js
+
+**Why this decision**
+
+React provided a straightforward way to manage the interactive playground state and keep the live preview and generated CSS synchronized.
+
+It also allowed the application to be divided into reusable components such as `Navbar`, `Layout`, `Home`, `Footer`, and `Playground`.
+
+**What it costs**
+
+Using React adds framework and dependency overhead compared with a plain HTML, CSS, and JavaScript implementation.
+
+It also requires React-specific knowledge and project structure that would not be necessary for a smaller static application.
+
+---
+
+### Decision 2: Frontend-only architecture
+
+**What was decided**
+
+I decided to keep LayoutLab entirely frontend-only without a backend or database.
+
+**Alternatives considered**
+
+- Frontend-only React application
+- React with a Node.js/Express backend
+- A backend with database storage for playground configurations
+
+**Why this decision**
+
+The main purpose of LayoutLab is experimenting with CSS layouts and generating CSS from the current configuration.
+
+The application does not require user accounts, persistent data, or server-side processing, so adding a backend would increase complexity without being necessary for the core experience.
+
+**What it costs**
+
+Users cannot save playground configurations to an account or access previously saved layouts from another device.
+
+The application is also limited to functionality that can be handled entirely in the browser.
+
+---
+
+### Decision 3: Dynamic CSS generation
+
+**What was decided**
+
+I chose to generate CSS directly from the playground configuration and display it alongside the live preview.
+
+**Alternatives considered**
+
+- Showing only the visual preview
+- Providing predefined CSS examples
+- Dynamically generating CSS from the current configuration
+
+**Why this decision**
+
+The goal of LayoutLab is not only to experiment visually but also to help users understand how CSS properties affect a layout.
+
+Showing the generated CSS makes the relationship between the controls and the resulting CSS explicit.
+
+**What it costs**
+
+Keeping the preview and generated CSS synchronized makes the implementation more complex.
+
+Every supported control has to be correctly reflected in both the live preview and CSS generation logic.
+
+**What proved awkward**
+
+Responsive CSS generation proved more awkward than initially expected.
+
+Supporting media queries while keeping the generated CSS synchronized with the live preview required additional logic and made this part of the implementation harder to maintain.
 
 ---
 
@@ -369,3 +444,4 @@ Possible future improvements include:
 GitHub: https://github.com/sohelkhan-07
 
 LinkedIn: https://www.linkedin.com/in/sohelkhan07/
+
